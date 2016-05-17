@@ -1,0 +1,20 @@
+<ion-view view-title="Sign Up" class="loginBg" hide-nav-bar="true" >
+	<ion-header-bar align-title="center" class="bar-positive bar-cevafacil">
+	  	<div class="buttons">
+	  		<a ng-click="goBack()" class="button icon ion-chevron-left" ></a>
+	  	</div>
+	  	<h1 class="title" style="padding-top: 10px;"><img src="img/Iconecentral.png"></h1>
+	</ion-header-bar>
+  
+  	<ion-content class="padding">
+	  	<div class="list" style="margin-top: 20px;">
+	  		<ion-item ng-repeat="item in types.types">
+		    	<a  href="#/app/type/2/brand/{{id}}/size/{{item.id}}"  class="item item-avatar">
+		    		<img src="{{item.logo}}">
+					<h2>{{item.name}}</h2>
+					<p>{{item.name}}</p>
+			    </a>
+			</ion-item>
+		</div>
+	</ion-content>
+</ion-view>

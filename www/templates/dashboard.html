@@ -1,0 +1,76 @@
+<ion-view view-title="Sign Up" class="loginBg" hide-nav-bar="true" >
+	<ion-header-bar align-title="center" class="bar-positive bar-cevafacil">
+	  	<div class="buttons">
+	  		<a ng-click="goBack()" class="button icon ion-chevron-left" ></a>
+	  	</div>
+	  	<h1 class="title" style="padding-top: 10px;"><img src="img/Iconecentral.png"></h1>
+	</ion-header-bar>
+  
+  	<ion-content class="padding">
+
+  		<div class="list card">
+			<div class="item item-avatar">
+			    <img src="{{beerLogo}}">
+			    <h2>{{result.Name}}</h2>
+			    <p>{{result.Distance}}</p>
+			    <span class="badge badge-assertive">{{result.Type.Value}}</span>
+			  </div>
+
+			  <div class="item item-body">
+			  	<p>
+			      {{result.Description}}
+			    </p>
+
+			    <p>
+			    	<b>Endereço</b><br />
+			      <span>{{result.Address}}</span>
+			    </p>
+
+			    <p>
+			    	<b>Telefone de contato</b><br />
+			      <span>{{result.PhoneNumber}}</span>
+			    </p>
+
+			    <p>
+			    	<b>Horário de funcionamento</b><br />
+			  		<span>
+			  			Seg à Sex: {{result.Business.BusinessDayIni}} às {{result.Business.BusinessDayFim}} <br />
+			  		</span>
+			  		<span ng-if="result.Business.SaturdayIni">
+			  			Sábado: {{result.Business.SaturdayIni}} às {{result.Business.SaturdayFim}} <br />
+			  		</span>
+			  		<span ng-if="result.Business.MondayIni">
+			  			Domingo: {{result.Business.MondayIni}} às {{result.Business.MondayFim}} <br />
+			  		</span>
+					  	
+			    </p>
+
+			    <p>
+			    	<b>Cartões Aceitos</b><br />
+			    	<span> 
+			    		<img ng-if="result.Cards.IsCheckedVisa" src="img/cards/Visa.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedMaster" src="img/cards/Mastercard.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedAmerican" src="img/cards/American.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedElo" src="img/cards/Elo.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedGoodcard" src="img/cards/Goodcard.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedHipercard" src="img/cards/Hipercard.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedMaestro" src="img/cards/Maestro.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedSodexo" src="img/cards/Sodexo.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedVR" src="img/cards/VR.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedAlelo" src="img/cards/Alelo.png" width="30px" height="20px">
+				    	<img ng-if="result.Cards.IsCheckedDinersclub" src="img/cards/dinersclub.png" width="30px" height="20px">
+			    	</span>
+			    </p>
+
+				<p ng-if="result.Delivery">
+			    	<b>Efetuamos entregas à domicílio</b><br />
+			    </p>
+
+			    <p style="text-align: center;">
+			    	<a href="#" ng-click="newTask()" target="_system" class="button button-balanced" style="width: 140px;">Ver Mapa</a> 
+				</p>
+			</div>
+		</div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-view view-title="Sign Up" class="loginBg" hide-nav-bar="true" >
+	<ion-header-bar align-title="center" class="bar-positive bar-cevafacil">
+	  	<div class="buttons">
+	    	<a ng-click="goBack()" class="button icon ion-chevron-left" ></a>
+	  	</div>
+	  	<h1 class="title" style="padding-top: 10px;"><img src="img/Iconecentral.png"></h1>
+	</ion-header-bar>
+  
+  	<ion-content class="padding">
+
+  		<div class="list card" ng-if="hasFirst">
+  			<ion-item ng-repeat="item in results" ng-if="item.Contract == 1">
+	  			<a href="#/app/type/{{id}}/brand/{{brand}}/size/{{size}}/company/{{item.Id}}" class="item item-avatar">
+				    <img src="{{beerLogo}}">
+				    <h2>{{item.Name}}</h2>
+				    <p>{{item.Distance}} - <span ng-if="item.OpenClose == 'Aberto'" class="open">{{item.OpenClose}}</span><span ng-if="item.OpenClose == 'Fechado'" class="closed">{{item.OpenClose}}</span> </p> 
+				    <span class="badge badge-assertive">{{item.Type.Value}}</span>
+				</a>
+			</ion-item>
+		</div>
+
+		<div class="list card" ng-if="hasSecond">
+  			<ion-item ng-repeat="item in results" ng-if="item.Contract == 2">
+	  			<a href="#/app/type/{{id}}/brand/{{brand}}/size/{{size}}/company/{{item.Id}}" class="item item-avatar">
+				    <img src="{{beerLogo}}">
+				    <h2>{{item.Name}}</h2>
+				    <p>{{item.Distance}} - <span ng-if="item.OpenClose == 'Aberto'" class="open">{{item.OpenClose}}</span><span ng-if="item.OpenClose == 'Fechado'" class="closed">{{item.OpenClose}}</span></p>
+				    <span class="badge badge-assertive">{{item.Type.Value}}</span>
+				</a>
+			</ion-item>
+		</div>
+
+		<div class="list card" ng-if="hasTree">
+  			<ion-item ng-repeat="item in results" ng-if="item.Contract == 0">
+	  			<a href="#/app/type/{{id}}/brand/{{brand}}/size/{{size}}/company/{{item.Id}}" class="item item-avatar">
+				    <img src="{{beerLogo}}">
+				    <h2>{{item.Name}}</h2>
+				    <p>{{item.Distance}} - <span ng-if="item.OpenClose == 'Aberto'" class="open">{{item.OpenClose}}</span><span ng-if="item.OpenClose == 'Fechado'" class="closed">{{item.OpenClose}}</span></p>
+				    <span class="badge badge-assertive">{{item.Type.Value}}</span>
+				</a>
+			</ion-item>
+		</div>
+
+  </ion-content>
+</ion-view>

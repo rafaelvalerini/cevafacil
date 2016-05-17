@@ -1,0 +1,27 @@
+<ion-view view-title="Sign Up" class="loginBg" hide-nav-bar="true" >
+  
+ <ion-header-bar align-title="center" class="bar-positive bar-cevafacil">
+    <div class="buttons">
+    	<a href="#/app/initial" class="button icon ion-chevron-left" ></a>
+   	</div>
+    <h1 class="title" style="padding-top: 10px;"><img src="img/Iconecentral.png"></h1>
+    <div class="buttons">
+    	<a href="#/app/new/cupom" class="button icon ion-plus-round" ></a>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <br />
+    <div class="list">
+        <ion-item ng-repeat="item in cupons">
+          <a href="#" class="item item-avatar top5" style="min-height: 60px;">
+            <img src="img/cupom.png" style="top: 9px;">
+            <h2>{{item.Code}}</h2>
+            <p>{{item.SellerDesc}}</p>
+          </a>
+          <div class="item item-body">
+              {{item.Description}}
+          </div>
+        </ion-item>
+    </div>
+  </ion-content>
+</ion-view>
